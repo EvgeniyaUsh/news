@@ -1,3 +1,5 @@
+{% load static %}
+
 <!-- Preloader Start-->
 <header>
     <!-- Header Start -->
@@ -28,12 +30,12 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3 d-none d-md-block">
                             <div class="logo">
-                                <a href="/index/"><img src="/static/assets/img/logo/logo.png" alt=""></a>
+                                <a href="{% url 'homepage' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-9 col-md-9">
                             <div class="header-banner f-right ">
-                                <img src="/static/assets/img/gallery/header_card.png" alt="">
+                                <img src="{% static 'assets/img/gallery/header_card.png' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -45,24 +47,29 @@
                         <div class="col-xl-8 col-lg-8 col-md-12 header-flex">
                             <!-- sticky -->
                             <div class="sticky-logo">
-                                <a href="/index/"><img src="/static/assets/img/logo/logo.png" alt=""></a>
+                                <a href="{% url 'homepage' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
                             </div>
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-md-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="/index/">Home</a></li>
-                                        <li><a href="/about/">about</a></li>
-                                        <li><a href="/category/">Category</a></li>
-                                        <li><a href="/latest_news/">Latest News</a></li>
-                                        <li><a href="#">Pages</a>
+                                        <li><a href="{% url 'about' %}">about</a></li>
+                                        <li><a href="{% url 'categories' %}">Category</a>
+                                             <ul class="submenu">
+                                                 {% for cat in menu_categories %}
+                                                <li><a href="{% url 'category' cat.slug %}">{{ cat.name }}</a></li>
+                                                 {% endfor %}
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="{% url 'latest_news' %}">Latest News</a></li>
+                                        <li><a href="{% url 'blog' %}">Pages</a>
                                             <ul class="submenu">
-                                                <li><a href="/blog/">Blog</a></li>
-                                                <li><a href="/blog_details/">Blog Details</a></li>
+                                                <li><a href="{% url 'article' 'some-slug' %}">Blog Details</a></li>
 
                                             </ul>
                                         </li>
-                                        <li><a href="/contact/">Contact</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>

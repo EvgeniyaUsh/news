@@ -7,17 +7,18 @@ from django.urls import include, path
 from bbc_news import views
 
 urlpatterns = [
-    path("", views.index_handler),
-    path("blog/", views.blog_handler),
-    path("about/", views.about_handler),
-    path("blog_details/", views.blog_details_handler),
-    path("category/", views.category_handler),
-    path("contact/", views.contact_handler),
-    path("latest_news/", views.latest_news_handler),
-    path("robots.txt/", views.robots_handler),
-    path("admin/", admin.site.urls),
-    path("summernote/", include("django_summernote.urls")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path("", views.index_handler, name="homepage"),
+                  path("blog/", views.blog_handler, name="blog"),
+                  path("about/", views.about_handler, name="about"),
+                  path("blog_details/<slug>", views.blog_details_handler, name="article"),
+                  path("categories/", views.categories_handler, name="categories"),
+                  path("category/<slug>", views.category_handler, name="category"),
+                  path("contact/", views.contact_handler, name="contact"),
+                  path("latest_news/", views.latest_news_handler, name="latest_news"),
+                  path("robots.txt/", views.robots_handler),
+                  path("admin/", admin.site.urls),
+                  path("summernote/", include("django_summernote.urls")),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += [path("__debug__/", include(debug_toolbar.urls))]

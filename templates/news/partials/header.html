@@ -50,8 +50,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{% url 'about' %}">about</a></li>
-                                        <li><a href="{% url 'categories' %}">Category</a>
+                                        <li><a href="{% url 'categories'%}">Category</a>
                                              <ul class="submenu">
+
                                                  {% for cat in menu_categories %}
                                                 <li><a href="{% url 'category' cat.slug %}">{{ cat.name }}</a></li>
                                                  {% endfor %}

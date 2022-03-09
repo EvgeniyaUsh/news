@@ -8,8 +8,8 @@ from bbc_news import views
 
 urlpatterns = [
                   path("", views.index_handler, name="homepage"),
-                  path("blog/", views.blog_handler, name="blog"),
                   path("about/", views.about_handler, name="about"),
+                  path("blog/", views.blog_handler, name="blog"),
                   path("blog_details/<slug>", views.blog_details_handler, name="article"),
                   path("categories/", views.categories_handler, name="categories"),
                   path("category/<slug>", views.category_handler, name="category"),

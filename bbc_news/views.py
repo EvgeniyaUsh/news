@@ -5,7 +5,7 @@ from .models import Article, Category
 
 
 def index_handler(request):
-    last_articles = Article.objects.all().order_by("-pub_date")[:6]
+    last_articles = Article.objects.all().order_by("-pub_date")[:6].prefetch_related('categories')
     menu_categories = Category.objects.annotate(
         count=Count("article__id")).order_by("count")[:6]
 
@@ -25,7 +25,8 @@ def category_handler(request, slug):
 
 
 def blog_handler(request):
-    context = {}
+    last_articles = Article.objects.all().order_by("-pub_date")[:10].prefetch_related('categories')
+    context = {'last_articles': last_articles}
     return render(request, "news/blog.html", context)
 
 

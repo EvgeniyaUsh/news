@@ -8,11 +8,13 @@ from slugify import slugify
 
 from bbc_news.models import Article, Author, Category
 
-author = Author.objects.get(id=2)
-print(author)
+
+def get_author(author_id=2):
+    return Author.objects.get(id=author_id)
 
 
 def crawl_one(url):
+    author = get_author()
     with HTMLSession() as session:
         response = session.get(url)
     try:

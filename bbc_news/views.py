@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Article
 
 
@@ -23,8 +23,14 @@ def blog_handler(request, **kwargs):
 
 def blog_details_handler(request, post_slug):
     article = Article.objects.get(slug=post_slug)
-    prev_article = Article.objects.get(id=article.id - 1)
-    next_article = Article.objects.get(id=article.id + 1)
+    try:
+        prev_article = Article.objects.get(id=article.id - 1)
+    except ObjectDoesNotExist:
+        prev_article = None
+    try:
+        next_article = Article.objects.get(id=article.id + 1)
+    except ObjectDoesNotExist:
+        next_article = None
     context = {
         'article': article,
         'prev_article': prev_article,

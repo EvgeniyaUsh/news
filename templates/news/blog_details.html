@@ -36,45 +36,49 @@
                         </ul>
                     </div>
                     <div class="navigation-area">
+
                         <div class="row">
+                               {% if prev_article %}
                             <div
                                     class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 <div class="thumb">
                                     <a href="#">
-                                        <img class="img-fluid" src="/static/assets/img/post/preview.png" alt="">
+                                        <img class="img-fluid" src="{{ prev_article.main_image.url }}" alt="">
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
+                                    <a href="{% url 'article' prev_article.slug %}">
                                         <span class="lnr text-white ti-arrow-left"></span>
                                     </a>
                                 </div>
                                 <div class="detials">
-                                    <p>Prev Post</p>
-                                    <a href="#">
-                                        <h4>Space The Final Frontier</h4>
+                                    <a href="{% url 'article' prev_article.slug %}">
+                                        <h4>{{ prev_article.name |truncatewords:10 }}</h4>
                                     </a>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if next_article %}
                             <div
                                     class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                 <div class="detials">
-                                    <p>Next Post</p>
-                                    <a href="#">
-                                        <h4>Telescopes 101</h4>
+
+                                    <a href="{{ next_article.main_image.url }}">
+                                        <h4>{{ next_article.name |truncatewords:10 }}</h4>
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
+                                    <a href="{{ next_article.main_image.url }}">
                                         <span class="lnr text-white ti-arrow-right"></span>
                                     </a>
                                 </div>
                                 <div class="thumb">
                                     <a href="#">
-                                        <img class="img-fluid" src="/static/assets/img/post/next.png" alt="">
+                                        <img class="img-fluid" src="{{ next_article.main_image.url }}" alt="">
                                     </a>
                                 </div>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

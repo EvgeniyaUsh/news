@@ -26,6 +26,11 @@ def get_new_articles(modeladmin, request, queryset):
             thread.start()
 
 
+# собирает все статьи одного автора
+class CommentsArticleInLine(admin.TabularInline):
+    model = Comment
+
+
 class ArticleAdmin(SummernoteModelAdmin):
     summernote_fields = (
         "content",
@@ -48,6 +53,7 @@ class ArticleAdmin(SummernoteModelAdmin):
         "author__name",
     )
     actions = (words_counter,)
+    inlines = (CommentsArticleInLine,)
 
     # добавление кастомного поля, которое будет отображать фото статьи
     def image_code(self, object):

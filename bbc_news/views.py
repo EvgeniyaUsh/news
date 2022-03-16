@@ -1,17 +1,36 @@
 from django.shortcuts import render
-from django.db.models import Count
 
-from .models import Article, Category
+from .models import Article
 
 
 def index_handler(request):
     last_articles = Article.objects.all().order_by("-pub_date")[:6].prefetch_related('categories')
-    menu_categories = Category.objects.annotate(
-        count=Count("article__id")).order_by("count")[:6]
 
-    context = {'last_articles': last_articles,
-               "menu_categories": menu_categories}
+    context = {'last_articles': last_articles}
     return render(request, "news/index.html", context)
+
+
+def blog_handler(request, **kwargs):
+    cat_slugs = kwargs.get('cat_slugs')
+    if cat_slugs:
+        last_articles = Article.objects.filter(categories__slug=cat_slugs).order_by("-pub_date")[:10].prefetch_related(
+            'categories')
+    else:
+        last_articles = Article.objects.all().order_by("-pub_date")[:10].prefetch_related('categories')
+    context = {'last_articles': last_articles}
+    return render(request, "news/blog.html", context)
+
+
+def blog_details_handler(request, post_slug):
+    article = Article.objects.get(slug=post_slug)
+    prev_article = Article.objects.get(id=article.id - 1)
+    next_article = Article.objects.get(id=article.id + 1)
+    context = {
+        'article': article,
+        'prev_article': prev_article,
+        'next_article': next_article
+    }
+    return render(request, "news/blog_details.html", context)
 
 
 def categories_handler(request):
@@ -19,25 +38,9 @@ def categories_handler(request):
     return render(request, "news/category.html", context)
 
 
-def category_handler(request, slug):
-    context = {}
-    return render(request, "news/category.html", context)
-
-
-def blog_handler(request):
-    last_articles = Article.objects.all().order_by("-pub_date")[:10].prefetch_related('categories')
-    context = {'last_articles': last_articles}
-    return render(request, "news/blog.html", context)
-
-
 def about_handler(request):
     context = {}
     return render(request, "news/about.html", context)
-
-
-def blog_details_handler(request, slug):
-    context = {}
-    return render(request, "news/blog_details.html", context)
 
 
 def contact_handler(request):

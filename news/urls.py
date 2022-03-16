@@ -9,10 +9,13 @@ from bbc_news import views
 urlpatterns = [
                   path("", views.index_handler, name="homepage"),
                   path("about/", views.about_handler, name="about"),
+
                   path("blog/", views.blog_handler, name="blog"),
-                  path("blog_details/<slug>", views.blog_details_handler, name="article"),
-                  path("categories/", views.categories_handler, name="categories"),
-                  path("category/<slug>", views.category_handler, name="category"),
+                  path("blog_details/<post_slug>", views.blog_details_handler, name="article"),
+
+                  path("blog/", views.blog_handler, name="categories"),
+                  path("category/<cat_slugs>", views.blog_handler, name="category"),
+
                   path("contact/", views.contact_handler, name="contact"),
                   path("latest_news/", views.latest_news_handler, name="latest_news"),
                   path("robots.txt/", views.robots_handler),

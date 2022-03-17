@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
-from .models import Article
+from .models import Article, Category
 
 
 def index_handler(request):
@@ -12,12 +12,29 @@ def index_handler(request):
 
 def blog_handler(request, **kwargs):
     cat_slugs = kwargs.get('cat_slugs')
+    page = int(kwargs.get('number', 1))
+    count_pages = 7
+    category = None
     if cat_slugs:
+        category = Category.objects.get(slug=cat_slugs)
         last_articles = Article.objects.filter(categories__slug=cat_slugs).order_by("-pub_date")[:10].prefetch_related(
             'categories')
+        articles_count = Article.objects.filter(categories__slug=cat_slugs).count()
+        max_page = articles_count // count_pages + 1
+
     else:
-        last_articles = Article.objects.all().order_by("-pub_date")[:10].prefetch_related('categories')
-    context = {'last_articles': last_articles}
+        articles_count = Article.objects.all().count()
+        max_page = articles_count // count_pages + 1
+        last_articles = Article.objects.all().order_by("-pub_date")[
+                        (page - 1) * count_pages:page * count_pages].prefetch_related('categories')
+
+    context = {
+        'last_articles': last_articles,
+        'pages': range(2, max_page + 1),
+        'current_page': page,
+        'max_page': max_page,
+        'category': category
+    }
     return render(request, "news/blog.html", context)
 
 

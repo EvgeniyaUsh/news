@@ -23,19 +23,7 @@
                     </div>
                 </div>
                 <div class="navigation-top">
-                    <div class="d-sm-flex justify-content-between text-center">
-                        <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
-                            people like this</p>
-                        <div class="col-sm-4 text-center my-2 my-sm-0">
-                            <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-                        </div>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
+
                     <div class="navigation-area">
 
                         <div class="row">
@@ -121,7 +109,8 @@
 
                     <div class="comment-form">
                         <h4>Leave a Reply</h4>
-                        <form class="form-contact comment_form" action="#" id="commentForm">
+                        <form class="form-contact comment_form" action="" method="post" id="commentForm">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">

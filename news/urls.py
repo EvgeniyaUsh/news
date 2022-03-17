@@ -11,13 +11,11 @@ urlpatterns = [
                   path("about/", views.about_handler, name="about"),
 
                   path("blog/", views.blog_handler, name="blog"),
-                  # path("blog/page/<number>/", views.blog_handler, name="blog_pager"),
 
                   path("blog_details/<post_slug>", views.blog_details_handler, name="article"),
 
                   path("blog/", views.blog_handler, name="categories"),
                   path("category/<cat_slugs>", views.blog_handler, name="category"),
-                  # path("category/<cat_slugs>/page/<number>/", views.blog_handler, name="category_pager"),
 
                   path("contact/", views.contact_handler, name="contact"),
                   path("latest_news/", views.latest_news_handler, name="latest_news"),

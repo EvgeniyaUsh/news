@@ -5,6 +5,7 @@ from .models import Article, Category, Comment
 
 
 def index_handler(request):
+    """Обработчик главной страницы"""
     last_articles = Article.objects.all().order_by("-pub_date")[:6].prefetch_related('categories')
 
     context = {'last_articles': last_articles}
@@ -12,6 +13,7 @@ def index_handler(request):
 
 
 def blog_handler(request, **kwargs):
+    """Обработчик вкалдки Blog и категорий"""
     cat_slugs = kwargs.get('cat_slugs')
     current_page = int(request.GET.get('page', 1))
     articles_on_page = 5
@@ -36,6 +38,7 @@ def blog_handler(request, **kwargs):
 
 
 def blog_details_handler(request, post_slug):
+    """Обработчик отдельной статьи"""
     article = Article.objects.get(slug=post_slug)
     if request.method == 'POST':
         data = {x[0]: x[1] for x in request.POST.items()}

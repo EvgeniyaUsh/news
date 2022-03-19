@@ -110,9 +110,9 @@
                     <div class="comment-form">
                         <h4>Leave a Comment</h4>
                         {% if form.non_field_errors %}
-                           {% for error in form.non_field_errors %}
-                            <p style="color: red;">{{ error }}</p>
-                            {% endfor %}
+                        {% for error in form.non_field_errors %}
+                        <p style="color: red;">{{ error }}</p>
+                        {% endfor %}
                         {% endif %}
                         <form class="form-contact comment_form" action="" method="post" id="commentForm">
                             {% csrf_token %}
@@ -120,8 +120,9 @@
                                 <div class="col-12">
                                     <div class="form-group" style="color: red;">
                                         {{ form.comment.errors }}
-                              <textarea class="form-control w-100" name="comment" id="comment" required cols="30" rows="9"
-                                        placeholder="Write Comment">{% if form.comment.value %}{{ form.comment.value }}{% endif %}</textarea>
+                                        <textarea class="form-control w-100" name="comment" id="comment" required
+                                                  cols="30" rows="9"
+                                                  placeholder="Write Comment">{% if form.comment.value %}{{ form.comment.value }}{% endif %}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -129,8 +130,8 @@
                                         {{ form.name.errors }}
                                         <input class="form-control" name="name" id="name" required type="text"
                                                placeholder="Name"
-                                        {% if form.name.value %}
-                                        value="{{ form.name.value }}"
+                                               {% if form.name.value %}
+                                               value="{{ form.name.value }}"
                                                {% endif %}
                                         >
                                     </div>
@@ -151,7 +152,7 @@
                                         {{ form.website.errors }}
                                         <input class="form-control" name="website" id="website" type="text"
                                                placeholder="Website"
-                                                {% if form.website.value %}
+                                               {% if form.website.value %}
                                                value="{{ form.website.value }}"
                                                {% endif %}
                                         >

@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
 from .models import Article, Category, Comment
+from .forms import CommentForm
 
 
 def index_handler(request):
@@ -40,13 +42,6 @@ def blog_handler(request, **kwargs):
 def blog_details_handler(request, post_slug):
     """Обработчик отдельной статьи"""
     article = Article.objects.get(slug=post_slug)
-    if request.method == 'POST':
-        data = {x[0]: x[1] for x in request.POST.items()}
-        del data['csrfmiddlewaretoken']
-        data['article'] = article
-        Comment.objects.create(
-            **data
-        )
 
     try:
         prev_article = Article.objects.get(id=article.id - 1)
@@ -61,6 +56,19 @@ def blog_details_handler(request, post_slug):
         'prev_article': prev_article,
         'next_article': next_article
     }
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            data['article'] = article
+            Comment.objects.create(**data)
+        else:
+            messages.add_message(request, messages.INFO, 'Error in form fields.')
+    else:
+        form = CommentForm()
+
+    context['form'] = form
 
     return render(request, "news/blog_details.html", context)
 

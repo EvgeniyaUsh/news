@@ -108,32 +108,53 @@
                     {% endfor %}
 
                     <div class="comment-form">
-                        <h4>Leave a Reply</h4>
+                        <h4>Leave a Comment</h4>
+                        {% if form.non_field_errors %}
+                           {% for error in form.non_field_errors %}
+                            <p style="color: red;">{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
                         <form class="form-contact comment_form" action="" method="post" id="commentForm">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                        placeholder="Write Comment"></textarea>
+                                    <div class="form-group" style="color: red;">
+                                        {{ form.comment.errors }}
+                              <textarea class="form-control w-100" name="comment" id="comment" required cols="30" rows="9"
+                                        placeholder="Write Comment">{% if form.comment.value %}{{ form.comment.value }}{% endif %}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control" name="name" id="name" type="text"
-                                               placeholder="Name">
+                                    <div class="form-group" style="color: red;">
+                                        {{ form.name.errors }}
+                                        <input class="form-control" name="name" id="name" required type="text"
+                                               placeholder="Name"
+                                        {% if form.name.value %}
+                                        value="{{ form.name.value }}"
+                                               {% endif %}
+                                        >
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control" name="email" id="email" type="email"
-                                               placeholder="Email">
+                                    <div class="form-group" style="color: red;">
+                                        {{ form.email.errors }}
+                                        <input class="form-control" name="email" id="email" required type="email"
+                                               placeholder="Email"
+                                               {% if form.email.value %}
+                                               value="{{ form.email.value }}"
+                                               {% endif %}
+                                        >
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-group">
+                                    <div class="form-group" style="color: red;">
+                                        {{ form.website.errors }}
                                         <input class="form-control" name="website" id="website" type="text"
-                                               placeholder="Website">
+                                               placeholder="Website"
+                                                {% if form.website.value %}
+                                               value="{{ form.website.value }}"
+                                               {% endif %}
+                                        >
                                     </div>
                                 </div>
                             </div>

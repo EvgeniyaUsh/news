@@ -82,10 +82,10 @@
                         </div>
                     </div>
                 </div>
+                 {% if comments %}
                 <div class="comments-area" id="comments">
-                    <h4>{{ article.comments.all.count }} Comments</h4>
-
-                    {%for comment in article.comments.all %}
+                    <h4>{{comments.count }} Comments</h4>
+                    {% for comment in comments %}
                     <div class="comment-list">
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     {% endfor %}
-
+                    {% endif %}
                     <div class="comment-form">
                         <h4>Leave a Comment</h4>
                         {% if form.non_field_errors %}

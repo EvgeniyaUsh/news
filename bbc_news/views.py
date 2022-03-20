@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
+from django.urls import reverse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.detail import SingleObjectMixin
-
+from django.views.generic.edit import FormMixin
 from .models import Article, Category, Comment
 from .forms import CommentForm
 
@@ -44,10 +45,11 @@ class CategoryListView(ListView, SingleObjectMixin):
         return super().get_queryset()
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(FormMixin, DetailView):
     template_name = "news/blog_details.html"
     model = Article
     slug_url_kwarg = "post_slug"
+    form_class = CommentForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -61,22 +63,25 @@ class ArticleDetailView(DetailView):
             next_article = None
         context['prev_article'] = prev_article
         context['next_article'] = next_article
+        context['comments'] = self.object.comments.filter(is_moderated=True)
 
         return context
 
+    def get_success_url(self):
+        return reverse('blog')
+
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-
-        form = CommentForm(request.POST)
+        form = self.get_form()
         if form.is_valid():
-            data = form.cleaned_data
-            data['article'] = self.object
-            Comment.objects.create(**data)
-            form = CommentForm()
-        context = super().get_context_data(**kwargs)
-        context['form'] = form
+            return self.form_valid(form)
+        return self.form_invalid(form)
 
-        return self.render_to_response(context)
+    def form_valid(self, form):
+        data = form.cleaned_data
+        data['article'] = self.object
+        Comment.objects.create(**data)
+        return super().form_valid(form)
 
 
 def blog_details_handler(request, post_slug):

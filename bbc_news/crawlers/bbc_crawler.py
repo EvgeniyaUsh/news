@@ -8,13 +8,15 @@ from slugify import slugify
 
 from bbc_news.models import Article, Author, Category
 
-
-def get_author(author_id=2):
-    return Author.objects.get(id=author_id)
+AUTHOR = None
 
 
 def crawl_one(url):
-    author = get_author()
+    global AUTHOR
+
+    if not AUTHOR:
+        Author.objects.get(id=2)
+
     with HTMLSession() as session:
         response = session.get(url)
     try:
@@ -73,7 +75,7 @@ def crawl_one(url):
             "short_description": short_description.strip(),
             "main_image": img_path,
             "pub_date": make_aware(pub_date),
-            "author": author,
+            "author": AUTHOR,
         }
 
         article, created = Article.objects.get_or_create(**article)

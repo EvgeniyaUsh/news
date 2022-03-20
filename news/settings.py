@@ -21,7 +21,8 @@ SECRET_KEY = "django-insecure-6=gdlx06k3#(bm)n-ca+0k9-qquh$(f$g!@j^@2q6_c34p9wh+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# айпи куаленного сервера добавляется сюда
+ALLOWED_HOSTS = ["127.0.0.1", 'add remote server']
 
 INTERNAL_IPS = [
     "127.0.0.1",

@@ -1,12 +1,18 @@
 nginx:
   build: ./nginx
   ports:
-   - "8080:80"
+    - "8080:80"
 
 web:
-    build: ./web_app
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./web_app:/code
-    ports:
-      - "8000:8000"
+  build: ./web_app
+  command: python manage.py runserver 0.0.0.0:8000
+  volumes:
+    - ./web_app:/code
+  ports:
+    - "8000:8000"
+
+db:
+  image: postgres
+  env_file: ./my.env
+  ports:
+    - "5555:5432"

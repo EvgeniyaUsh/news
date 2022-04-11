@@ -15,7 +15,7 @@ def crawl_one(url):
     global AUTHOR
 
     if not AUTHOR:
-        Author.objects.get(id=2)
+        Author.objects.get(id=1)
 
     with HTMLSession() as session:
         response = session.get(url)

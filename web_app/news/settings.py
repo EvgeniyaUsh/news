@@ -21,7 +21,7 @@ SECRET_KEY = "django-insecure-6=gdlx06k3#(bm)n-ca+0k9-qquh$(f$g!@j^@2q6_c34p9wh+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# айпи куаленного сервера добавляется сюда
+# айпи купленного сервера добавляется сюда
 ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
 
 INTERNAL_IPS = [
@@ -77,12 +77,24 @@ WSGI_APPLICATION = "news.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

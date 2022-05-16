@@ -4,14 +4,17 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - "8080:80"
+       - "8080:80"
+    volumes:
+      - ./web_app/static_root:/code/static_root
+      - ./web_app/media:/code/media
     depends_on:
       - web
 
   web:
     build: ./web_app
     env_file: ./my.env
-    command: python manage.py runserver 0.0.0.0:8000
+    command: /code/run.sh
     volumes:
       - ./web_app:/code
     ports:

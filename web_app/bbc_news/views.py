@@ -1,13 +1,15 @@
+import logging
 from django.shortcuts import render
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.paginator import Paginator
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.edit import FormMixin
 from .models import Article, Category, Comment
 from .forms import CommentForm
+
+logger = logging.getLogger("custom")
 
 
 class IndexView(TemplateView):
@@ -38,6 +40,8 @@ class CategoryListView(ListView, SingleObjectMixin):
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object(queryset=Category.objects.all())
+
+        logger.debug(locals())
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):

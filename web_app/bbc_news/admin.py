@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 from .crawlers.bbc_crawler import run_parser
 
-from .models import Article, Author, Category, Comment, Newsletter, Tag
+from .models import Article, Category, Comment, Newsletter, Tag
 
 
 @admin.action(description="Count words in article")
@@ -82,26 +82,25 @@ class CategoryAdmin(admin.ModelAdmin):
         return object.article_set.all().count()
 
 
-# собирает все статьи одного автора
-class AuthorArticleInLine(admin.TabularInline):
-    model = Article
-    exclude = ("content", "short_description")
 
-
-class AuthorAdmin(admin.ModelAdmin):
-    list_display = ("name", "ava")
-    search_fields = ("name",)
-    inlines = (AuthorArticleInLine,)
-    actions = (get_new_articles,)
-
-    def ava(self, object):
-        return format_html(
-            '<img src="{}" style="max-width: 70px" />', object.avatar.url
-        )
+# class AuthorArticleInLine(admin.TabularInline):
+#     model = Article
+#     exclude = ("content", "short_description")
+#
+#
+# class AuthorAdmin(admin.ModelAdmin):
+#     list_display = ("name", "ava")
+#     search_fields = ("name",)
+#     inlines = (AuthorArticleInLine,)
+#     actions = (get_new_articles,)
+#
+#     def ava(self, object):
+#         return format_html(
+#             '<img src="{}" style="max-width: 70px" />', object.avatar.url
+#         )
 
 
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Author, AuthorAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Comment)
 admin.site.register(Tag)

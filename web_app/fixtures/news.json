@@ -1005,15 +1005,6 @@
     }
 },
 {
-    "model": "bbc_news.author",
-    "pk": 2,
-    "fields": {
-        "name": "BBC news",
-        "avatar": "avatars/logo2_footer.png",
-        "bio": "BBC news"
-    }
-},
-{
     "model": "bbc_news.article",
     "pk": 1,
     "fields": {
@@ -1024,7 +1015,7 @@
         "short_description": "By Kevin Peachey\nPersonal finance correspondent, BBC News Benefits should rise to match the soaring cost of living as millions face crippling price rises driven by energy bills, a think tank has said.",
         "main_image": "images/pensions-and-benefits-will-not-keep-up-with-cost-of-living-warns-think-tank.jpg",
         "pub_date": "2022-01-16T09:24:19.238Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             1,
             3,
@@ -1044,7 +1035,7 @@
         "short_description": "Pret A Manger is to raise the pay of thousands of its workers to more than £10 per hour, following the lead of other retailers and supermarkets. The sandwich chain said it wanted to invest in its staff as it recovered from the coronavirus pandemic which has battered its business.",
         "main_image": "images/pret-boosts-pay-to-ps10-per-hour-for-thousands-of-staff.jpg",
         "pub_date": "2022-01-16T09:24:19.285Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             8
@@ -1062,7 +1053,7 @@
         "short_description": "Martin Shkreli, the former drug firm executive who ordered dramatic price hikes of a life-saving medicine, has been barred from the industry for life. In a decision on Friday, Judge Denise Cote ordered him to repay $64.6m (£47m) in profits he made from the scheme.",
         "main_image": "images/jailed-pharma-bro-martin-shkreli-ordered-to-repay-64m.jpg",
         "pub_date": "2022-01-16T09:24:19.292Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             5,
             6
@@ -1080,7 +1071,7 @@
         "short_description": "This video can not be played A set of new coin designs have been released by the Royal Mint to mark the new year and the upcoming Queen's Platinum Jubilee. The designs take years to develop and aim to mark memorable moments in history.",
         "main_image": "images/queen-s-platinum-jubilee-royal-mint-releases-new-coins.jpg",
         "pub_date": "2022-01-16T09:24:19.563Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1095,7 +1086,7 @@
         "short_description": "This video can not be played Liz Vick from Salford lives in a low-rise building which has fire safety issues due to missing cavity barriers, not cladding, so will not be covered by the government's latest proposals to help people trapped in \"unsellable homes\". You can read more about the issue here.",
         "main_image": "images/my-life-is-on-hold-until-the-crisis-is-over.jpg",
         "pub_date": "2022-01-16T09:24:19.632Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1110,7 +1101,7 @@
         "short_description": "The company that bought a town's prominent former Debenhams store said it was in talks with two new potential tenants, plus restaurant chains. The site in Ipswich's Cornhill was bought by The Unex Group for more than £3m in April.",
         "main_image": "images/debenhams-unex-in-talks-over-old-ipswich-store.jpg",
         "pub_date": "2022-01-16T09:24:19.559Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             8,
             9,
@@ -1130,7 +1121,7 @@
         "short_description": "This video can not be played One of the world's few dairies allowed to produce Stilton cheese has been talking about its busy Christmas period. Long Clawson Dairy, in Leicestershire, planned to make about 2,500 whole cheeses, weighing about 18kg (39lb), each day in the lead-up to the festive season.",
         "main_image": "images/life-inside-one-of-the-world-s-few-stilton-makers.jpg",
         "pub_date": "2022-01-16T09:24:19.901Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1145,7 +1136,7 @@
         "short_description": "The former chairman and chief executive of supermarket chain Sainsbury's, Lord Sainsbury of Preston Candover, has died aged 94, the company has announced. During his 40-year career with the firm he covered several roles, becoming a director in 1958 before being promoted to lead the business in 1969.",
         "main_image": "images/ex-supermarket-boss-lord-sainsbury-of-preston-candover-dies-at-94.jpg",
         "pub_date": "2022-01-16T09:24:21.169Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             12
         ]
@@ -1162,7 +1153,7 @@
         "short_description": "By Dearbail Jordan\nBusiness reporter, BBC News The UK economy surpassed pre-Covid levels for the first time in November after recording stronger-than-expected growth. The Office for National Statistics said gross domestic product (GDP) expanded by 0.9% between October and November.",
         "main_image": "images/uk-economy-above-pre-covid-levels-in-november.jpg",
         "pub_date": "2022-01-16T09:24:21.413Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             7,
             13,
@@ -1184,7 +1175,7 @@
         "short_description": "Currys said 2021 was \"the year that virtual reality broke into the mainstream\" as the electronics retailer reported a \"challenging\" Christmas. Chief executive Alex Baldock said Oculus Quest 2 and PS5 were \"stars\" as \"consoles flew off the shelves\" in what he described as a \"gamers' Christmas\".",
         "main_image": "images/gamers-help-currys-through-challenging-christmas.jpg",
         "pub_date": "2022-01-16T09:24:21.445Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             13,
@@ -1203,7 +1194,7 @@
         "short_description": "By Natalie Sherman\nBusiness reporter, New York The US Supreme Court has blocked President Joe Biden's rule requiring workers at large companies to be vaccinated or masked and tested weekly. The justices at the nation's highest court said the mandate exceeded the Biden administration's authority.",
         "main_image": "images/us-supreme-court-blocks-biden-s-workplace-vaccine-mandate.jpg",
         "pub_date": "2022-01-16T09:24:21.673Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             18,
@@ -1224,7 +1215,7 @@
         "short_description": "This video can not be played A woman who has been named as the UK's best bus driver has been speaking about how she used her experiences of family tragedy as a means to support her passengers. Karen Miles was crowned bus driver of the year in the UK Bus and Coach Awards for her work during the pandemic.",
         "main_image": "images/uk-s-best-bus-driver-derbyshire-woman-s-inspiring-journey-to-help-others.jpg",
         "pub_date": "2022-01-16T09:24:21.676Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1239,7 +1230,7 @@
         "short_description": "By Kevin Peachey\nPersonal finance correspondent, BBC News Energy supplier E.On has said it is \"incredibly sorry\" for sending socks to customers in a bid to encourage them to turn the heating down. It is the second major supplier to admit to a marketing gaffe when customers are facing a cost of living squeeze driven by energy prices.",
         "main_image": "images/energy-firm-e-on-apologises-for-sending-socks-to-customers.jpg",
         "pub_date": "2022-01-16T09:24:21.950Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             3,
@@ -1258,7 +1249,7 @@
         "short_description": "Google is backing a return to the office with an investment that will expand its UK capacity by 50% and \"reinvigorate\" the work environment. The search giant is spending £730m ($1bn) and expects headcount to rise from 6,400 to 10,000.",
         "main_image": "images/google-will-spend-ps730m-to-reinvigorate-its-uk-offices.jpg",
         "pub_date": "2022-01-16T09:24:22.074Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             20
         ]
@@ -1275,7 +1266,7 @@
         "short_description": "By Beth Timmins\nBusiness reporter, BBC News Ocado and Next have cut sick pay for unvaccinated staff who must self-isolate because of Covid exposure, the BBC has learned. Both retailers will continue to pay full sick pay to unvaccinated workers if they test positive for the virus.",
         "main_image": "images/ocado-and-next-cut-sick-pay-for-unvaccinated-isolating-staff.jpg",
         "pub_date": "2022-01-16T09:24:22.239Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             13,
@@ -1296,7 +1287,7 @@
         "short_description": "Martin Shkreli, the former drug firm executive found guilty of defrauding investors, has been sentenced to seven years in prison. The 34-year-old wept at a hearing as a federal court judge in Brooklyn, New York, handed down the prison term.",
         "main_image": "images/pharma-bro-martin-shkreli-sentenced-to-seven-years.jpg",
         "pub_date": "2022-01-16T09:24:22.432Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             25
         ]
@@ -1313,7 +1304,7 @@
         "short_description": "By Lora Jones\nBusiness reporter, BBC News Throughout the pandemic, working lives have been upended. Job losses, home-schooling, overtime hours, or a non-existent commute to the kitchen table - few people have been unaffected.",
         "main_image": "images/firefighting-is-not-all-about-saving-cats-in-trees.jpg",
         "pub_date": "2022-01-16T09:24:22.442Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             27,
             28,
@@ -1332,7 +1323,7 @@
         "short_description": "French holiday bookings have jumped after Paris said it would ease restrictions on UK travellers, travel firms have said. Airline Jet2 said it had seen a \"sharp\" rise in bookings and searches for flights to French skiing destinations.",
         "main_image": "images/french-holiday-bookings-surge-after-rule-change.jpg",
         "pub_date": "2022-01-16T09:24:23.548Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             30,
@@ -1355,7 +1346,7 @@
         "short_description": "Making jewellery from a £20 lump of clay bought during lockdown led to a woman setting up her own business. Amy Crouch, 24, has now left her job and is set up her jewellery business, Only Angel Studios, in January 2021.",
         "main_image": "images/stourport-jewellery-business-success-thanks-to-social-media.jpg",
         "pub_date": "2022-01-16T09:24:23.640Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             38,
@@ -1374,7 +1365,7 @@
         "short_description": "By Steffan Powell\nGaming reporter Jimmy Donaldson, the 23-year-old American better known as MrBeast, was YouTube's highest-earning content creator in 2021, according to Forbes. His elaborate stunts have generated more than 10 billion views on the platform and earned him $54m (£39m).",
         "main_image": "images/youtube-rich-list-mrbeast-was-the-highest-paid-star-of-2021.jpg",
         "pub_date": "2022-01-16T09:24:23.666Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             35,
             41,
@@ -1396,7 +1387,7 @@
         "short_description": "By Bernd Debusmann Jr & Holly Honderich\nBBC News, Washington Even as the Omicron variant sweeps around the world, public health officials have noted that, in most cases, the number of Covid patients in hospitals remains significantly lower than during previous pandemic surges.",
         "main_image": "images/the-puzzle-of-america-s-record-covid-hospital-rate.jpg",
         "pub_date": "2022-01-16T09:24:23.684Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             23,
@@ -1416,7 +1407,7 @@
         "short_description": "A professional recruitment firm says it is placing graduate lawyers at top firms on starting salaries as high as £150,000 amid a shortage of workers. Alan Bannatyne, chief financial officer at Robert Walters, told the BBC people in many UK industries were quitting for better paid jobs amid soaring demand.",
         "main_image": "images/ps150000-starting-salaries-as-firms-fight-for-staff.jpg",
         "pub_date": "2022-01-16T09:24:24.002Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             26,
@@ -1437,7 +1428,7 @@
         "short_description": "This video can not be played A mysterious supermarket that leads to another dimension has opened in Las Vegas. The Omega Mart is part adventure game, part art installation and visitors are invited to solve a mystery by tapping their store loyalty card.",
         "main_image": "images/omega-mart-where-art-meets-escape-room.jpg",
         "pub_date": "2022-01-16T09:24:22.899Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1452,7 +1443,7 @@
         "short_description": "South Korea has increased its base rate of interest to where it was before the pandemic, as it tries to contain rising inflation and soaring household debt. The Bank of Korea's (BOK) widely expected decision to raise the rate to 1.25% was its third hike in six months.",
         "main_image": "images/inflation-south-korea-raises-rates-to-pre-pandemic-level.jpg",
         "pub_date": "2022-01-16T09:24:24.233Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             13,
             14,
@@ -1472,7 +1463,7 @@
         "short_description": "By Kate Stanton\nBusiness reporter Stephanie Jarvis credits YouTube with saving her vast French chateau. She had bought the 40-room, 16th Century home back in 2005 after pooling resources with a friend.",
         "main_image": "images/the-people-using-youtube-to-pay-for-their-french-chateau.jpg",
         "pub_date": "2022-01-16T09:24:22.737Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             31,
             42,
@@ -1494,7 +1485,7 @@
         "short_description": "By Christine Ro\nBusiness of Technology reporter This is the first of two Business of Technology articles examining the way wood pellets are produced and used as an energy source. The areas in and around North Carolina's forests feel spacious. Canopies of lanky pine trees eventually give way to enormous car parks and long-term storage units, underscoring the feeling of vastness.",
         "main_image": "images/the-controversy-of-wood-pellets-as-a-green-energy-source.jpg",
         "pub_date": "2022-01-16T09:24:24.810Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             55,
             56,
@@ -1517,7 +1508,7 @@
         "short_description": "By Megha Mohan\nGender and Identity correspondent When Cynthia Chapple was asked to help out with a photograph of a research professor and his staff, she assumed that she would be the one taking the photo. The image was going to be used by the professor for a grant application.",
         "main_image": "images/as-a-black-woman-in-stem-i-m-used-for-photo-opportunities.jpg",
         "pub_date": "2022-01-16T09:24:24.888Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             57,
             59,
@@ -1538,7 +1529,7 @@
         "short_description": "The boss of Ovo Energy has blamed a \"bad day\" for ridiculous advice to customers on how to stay warm amid soaring bills. Stephen Fitzpatrick told the BBC he felt \"really embarrassed\" about the 10-point plan, which included \"doing a few star jumps\" and cuddling pets.",
         "main_image": "images/ovo-energy-boss-blames-bad-day-for-ridiculous-advice.jpg",
         "pub_date": "2022-01-16T09:24:24.960Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             58
@@ -1556,7 +1547,7 @@
         "short_description": "This video can not be played Laura Willoughby MBE gave up drinking 10 years ago because she felt it would take her to a dangerous place and it was affecting her mental health. The 47-year-old from Newham, east London, founded mindful drinking community Club Soda and opened an alcohol-free 'off-licence'.",
         "main_image": "images/the-alcohol-free-off-licence-helping-with-dry-january.jpg",
         "pub_date": "2022-01-16T09:24:25.077Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1571,7 +1562,7 @@
         "short_description": "Kim Kardashian is among three celebrities being sued by investors in the EthereumMax crypto-currency. Other defendants include boxer Floyd Mayweather Jr, basketball player Paul Pierce, and the currency's creators.",
         "main_image": "images/kim-kardashian-sued-in-crypto-pump-and-dump-case.jpg",
         "pub_date": "2022-01-16T09:24:25.379Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             68,
             69,
@@ -1590,7 +1581,7 @@
         "short_description": "On Amazon Alexa: Say \"Play BBC News\" to your Amazon Alexa smart speaker, and get the BBC's first ever interactive news bulletin. You can hear the latest headlines, deep-dive into the stories that interest you, or move on when you've heard enough - simply by using your voice.",
         "main_image": "images/how-to-get-bbc-news-on-smart-speakers.png",
         "pub_date": "2022-01-16T09:24:25.705Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1605,7 +1596,7 @@
         "short_description": "Britain and India have concluded their first day of talks about a potential free trade deal in New Delhi. The aim is to have an agreement signed by the end of the year that could boost trade by billions of pounds.",
         "main_image": "images/uk-and-india-launch-trade-talks-worth-billions.jpg",
         "pub_date": "2022-01-16T09:24:25.749Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             71,
             72,
@@ -1624,7 +1615,7 @@
         "short_description": "North Korean hackers stole almost $400m (£291m) worth of digital assets in at least seven attacks on cryptocurrency platforms last year, a report claims. Blockchain analysis company Chainalysis said it was one of most successful years on record for cyber-criminals in the closed east Asian state.",
         "main_image": "images/north-korea-hackers-stole-400m-of-cryptocurrency-in-2021-report-says.jpg",
         "pub_date": "2022-01-16T09:24:26.789Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             70,
             75,
@@ -1643,7 +1634,7 @@
         "short_description": "Tesla, the electric carmaker headed by billionaire Elon Musk, has started to allow people to buy brand merchandise using Dogecoin, a cryptocurrency initially started as a joke. Mr Musk announced the development on Twitter on Friday, a month after hinting of the plans.",
         "main_image": "images/tesla-starts-accepting-once-joke-cryptocurrency-dogecoin.jpg",
         "pub_date": "2022-01-16T09:24:26.861Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             70,
             74,
@@ -1664,7 +1655,7 @@
         "short_description": "Up to 44 million UK Facebook users could share £2.3bn in damages, according to a competition expert intending to sue parent company Meta. Dr Liza Lovdahl Gormsen alleges Meta \"abused its market dominance\" to set an \"unfair price\" for free use of Facebook - UK users' personal data.",
         "main_image": "images/meta-faces-billion-pound-class-action-case.jpg",
         "pub_date": "2022-01-16T09:24:27.269Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             80,
             81
@@ -1682,7 +1673,7 @@
         "short_description": "By Padraig Belton\nBusiness reporter If you have ever dreamed of earning money from a stellar music career but were concerned you had little talent, don't let that put you off - a man called Alex Mitchell might be able to help.",
         "main_image": "images/the-ai-software-that-could-turn-you-in-to-a-music-star.jpg",
         "pub_date": "2022-01-16T09:24:27.621Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             82,
             83,
@@ -1701,7 +1692,7 @@
         "short_description": "By Christine Ro\nBusiness of Technology reporter This is the second of two articles examining the way wood pellets are produced and used as a green energy source. The first article can be found here. The Drax power station near Selby, Yorkshire, is surrounded by both busy roads and small farms. A faint humming noise emanates all around the complex, while water vapour rises slowly and steadily from the cooling towers.",
         "main_image": "images/the-green-row-over-the-uk-s-largest-renewable-power-plant.jpg",
         "pub_date": "2022-01-16T09:24:27.699Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             55,
             56,
@@ -1725,7 +1716,7 @@
         "short_description": "Douglas Fraser\nBusiness/economy editor, Scotland A bottle of Scotch whisky arriving in the port of Mumbai faces a colossal 150% import tariff, yet it hasn't stopped Indians from being enthusiastic drinkers of a dram.",
         "main_image": "images/scotch-whisky-on-the-table-in-trade-talks-with-india.jpg",
         "pub_date": "2022-01-16T09:24:28.265Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             72,
             86
@@ -1743,7 +1734,7 @@
         "short_description": "This video can not be played Soaring energy prices which threaten the living standards of millions could last up to two years, the boss of the UK's biggest energy supplier has said. Chris O'Shea, chief executive of British Gas owner Centrica, said there was \"no reason\" to expect gas prices would come down \"any time soon\".",
         "main_image": "images/british-gas-owner-warns-of-high-energy-bills-for-two-years.jpg",
         "pub_date": "2022-01-16T09:24:28.769Z",
-        "author": 2,
+        "author": 1,
         "categories": []
     }
 },
@@ -1758,7 +1749,7 @@
         "short_description": "Using a company to help you claim a tax rebate could end up costing you hundreds of pounds extra according to consumer group Which? Dozens of firms online offer to help customers claim back tax they're owed by HM Revenue & Customs, for example, for the Marriage Allowance.",
         "main_image": "images/don-t-use-refund-firms-to-claim-tax-rebates-says-which.jpg",
         "pub_date": "2022-01-16T09:24:28.799Z",
-        "author": 2,
+        "author": 1,
         "categories": [
             2,
             3,

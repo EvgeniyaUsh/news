@@ -22,7 +22,7 @@ SECRET_KEY = "django-insecure-6=gdlx06k3#(bm)n-ca+0k9-qquh$(f$g!@j^@2q6_c34p9wh+
 DEBUG = True
 
 # айпи купленного сервера добавляется сюда
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = ["*"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -31,6 +31,8 @@ INTERNAL_IPS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # "grappelli",
+    "django.contrib.sites",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,6 +42,10 @@ INSTALLED_APPS = [
     "bbc_news.apps.BbcNewsConfig",
     "debug_toolbar",
     "django_summernote",
+    "accounts",
+    "userena",
+    "guardian",
+    "easy_thumbnails",
 ]
 
 MIDDLEWARE = [
@@ -72,7 +78,34 @@ TEMPLATES = [
     },
 ]
 
+DEFAULT_FROM_EMAIL = "ganhar55@yandex.ru"
+
+SITE_ID = 1
+
 WSGI_APPLICATION = "news.wsgi.application"
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "ganhar55@yandex.ru"
+EMAIL_HOST_PASSWORD = "Awenu_1995"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+ANONYMOUS_USER_NAME = 'AnonymousAuthor'
+AUTH_PROFILE_MODULE = 'accounts.Author'
+
+USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
+
+USERENA_DISABLE_PROFILE_LIST = True
+
+USERENA_PROFILE_DETAIL_TEMPLATE = 'userena/profile_detail.html'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -88,13 +121,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -1,3 +1,4 @@
 my.env
 .idea/
 /web_app/static_root/
+/venv

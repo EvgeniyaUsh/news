@@ -19,7 +19,12 @@ urlpatterns = [
 
                   path("contact/", views.ContactView.as_view(), name="contact"),
                   path("latest_news/", views.LatestNewsView.as_view(), name="latest_news"),
+
+                  path('accounts/', include('accounts.urls')),
+
                   path("robots.txt/", views.RobotsView.as_view()),
+                  # grappelli URLS
+                  path('grappelli/', include('grappelli.urls')),
                   path("admin/", admin.site.urls),
                   path("summernote/", include("django_summernote.urls")),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
